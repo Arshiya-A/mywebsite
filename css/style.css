@@ -1,0 +1,703 @@
+/* بازنشانی استایل‌ها */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+/* استایل مشترک تمام بخش‌ها */
+.site-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    padding: 60px 0;
+    border-bottom: 4px solid #000000;
+
+    /* تنظیمات تصاویر پس‌زمینه */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+}
+
+/* کانتینر اصلی */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* کانتینر اختصاصی بخش آمار برای چیدمان دو ستونه مستقل از RTL/LTR */
+.container-stats {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* عکس در منتهی‌الیه چپ و کارت آمار در منتهی‌الیه راست */
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+/* تنظیمات ابعاد و رفتار عکس کنار آمار */
+.stats-side-img {
+    width: 100%;
+    max-width: 460px;
+    /* کنترل اندازه عکس در دسکتاپ - این عدد را می‌توانید کمتر یا بیشتر کنید */
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* تصاویر پس‌زمینه و رنگ‌های اختصاصی هر بخش */
+.section-header {
+    background-color: #03a9f400;
+    background-image: url('../images/Background3.jpg');
+    color: #000000;
+    position: relative;
+}
+
+.section-stats {
+    background-color: #4caf4f00;
+    background-image: url('../images/Background2.jpg');
+    color: #000000;
+}
+
+.section-reviews {
+    background-color: #ffeb3b;
+    background-image: url('../images/Background4.jpg');
+    color: #000000;
+}
+
+.section-gallery {
+    background-color: #00ff11;
+    background-image: url('../images/Background1.jpg');
+    color: #ffffff;
+}
+
+.section-contact {
+    background-color: #ffffff00;
+    background-image: url('../images/Background5.jpg');
+    color: #ffffff;
+    border-bottom: none;
+}
+
+/* استایل متون */
+h1,
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+
+.section-gallery h2,
+.section-contact h2 {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* تنظیمات اختصاصی ساختار داخلی هدر (جلوگیری از تداخل متن با عنوان) */
+.header-container {
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+    /* افزایش جزئی ارتفاع برای حریم متن‌های طولانی */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* ردیف برند بالا، ردیف توضیحات پایین */
+    align-items: stretch;
+}
+
+/* کانتینر مشترک لوگو و نام وب‌سایت در بالا سمت چپ */
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
+    /* فیکس شدن در سمت چپ */
+}
+
+/* استایل اختصاصی لوگو */
+.site-logo {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* نام وب‌سایت */
+.brand-name {
+    font-size: 4.5rem;
+    font-weight: bold;
+    white-space: nowrap;
+    color: white;
+
+    text-shadow:
+        -3px -3px 0 #000,
+        3px -3px 0 #000,
+        -3px 3px 0 #000,
+        3px 3px 0 #000;
+
+}
+
+/* توضیحات کوتاه در پایین سمت راست */
+.short-description {
+    max-width: 600px;
+    text-align: right;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    color: white;
+    font-weight: 900;
+    background-color: #0000006b;
+    padding: 10px;
+    border-radius: 15px;
+    align-self: flex-end;
+    text-align: center;
+    /* فیکس شدن در سمت راست */
+    margin-top: 20px;
+    /* سپر دفاعی برای نچسبیدن به عنوان در متون طولانی */
+}
+
+/* -------------------------------------------
+   استایل‌های اختصاصی بخش آمار دانلود (Stats)
+------------------------------------------- */
+
+/* کارت اصلی شیشه‌ای */
+.stats-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    /* هماهنگی بهینه ابعاد در کنار عکس */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* عنوان داخل کارت */
+.stats-title {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* ردیف‌های آمار */
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    margin-bottom: 12px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.stats-row:hover {
+    transform: scale(1.02);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.stats-row:last-child {
+    margin-bottom: 0;
+}
+
+/* بخش عنوان و آیکون */
+.stats-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.stats-icon {
+    font-size: 1.3rem;
+}
+
+/* بخش اعداد و آمار روبرو */
+.stats-value {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: 'Tahoma', sans-serif;
+    background: #000000;
+    padding: 4px 14px;
+    border-radius: 6px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------------------------------
+   استایل‌های اختصاصی بخش نظر مشتریان (Reviews)
+------------------------------------------- */
+
+.reviews-section-title {
+    color: #000000;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.reviews-container {
+    max-width: 100% !important;
+    padding: 0 40px;
+}
+
+.reviews-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    padding: 20px 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.reviews-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reviews-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.review-card {
+    flex: 0 0 320px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 3px solid #000000;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    direction: rtl;
+}
+
+.review-header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
+    padding-bottom: 10px;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    object-fit: cover;
+}
+
+.review-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.review-text {
+    font-size: 1.25rem;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.review-rating {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* -------------------------------------------
+   استایل‌های اختصاصی بخش گالری (Gallery)
+------------------------------------------- */
+
+.gallery-section-title {
+    color: #ffffff;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.gallery-container {
+    max-width: 100% !important;
+    padding: 0 40px;
+}
+
+.gallery-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto;
+    padding: 20px 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+.gallery-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+.gallery-card {
+    flex: 0 0 300px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid #000000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #000000;
+}
+
+.gallery-card-info {
+    padding: 12px 15px;
+    text-align: right;
+    background: #ffffff;
+    direction: rtl;
+}
+
+.gallery-image-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* -------------------------------------------
+   استایل‌های اختصاصی بخش راه‌های ارتباطی (Contact)
+------------------------------------------- */
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    padding: 20px 0;
+}
+
+/* ساخت خط جداکننده میانی در دسکتاپ */
+.contact-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #fff 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.contact-column {
+    flex: 0 0 45%;
+    text-align: right;
+    direction: rtl;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #000000ba;
+    padding: 32px;
+    border-radius: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+}
+
+.contact-value {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+    background-color: #000000ba;
+    padding: 32px;
+    border-radius: 25px;
+}
+
+.shops-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+}
+
+.shops-title-wrapper h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.shops-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.shops-list li {
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.6;
+    position: relative;
+    padding-right: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.shops-list li::before {
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: #000000;
+    font-weight: bold;
+}
+
+.contact-icon {
+    font-size: 1.6rem;
+    background: #000000;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------------------------------------
+   قوانین واکنش‌گرایی (Media Queries) 
+------------------------------------------- */
+
+/* تنظیمات موبایل */
+@media (max-width: 767px) {
+    .site-section {
+        min-height: 550px;
+        padding: 40px 0;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* استایل‌های واکنش‌گرایی جدید هدر */
+    .header-container {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* وسط‌چین شدن همه المان‌ها در موبایل */
+        gap: 20px;
+    }
+
+    .brand-wrapper {
+        position: static;
+        /* حذف مطلق بودن پوزیشن در موبایل */
+        align-self: center;
+        gap: 6px;
+    }
+
+    .site-logo {
+        width: 30px;
+    }
+
+    .brand-name {
+        font-size: 2.2rem;
+        /* متناسب‌سازی سایز هدر بزرگ در موبایل */
+    }
+
+    .short-description {
+        position: static;
+        /* حذف مطلق بودن پوزیشن در موبایل */
+        font-size: 0.85rem;
+        align-self: center;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    /* واکنش‌گرایی بخش آمار دانلود */
+    .container-stats {
+        flex-direction: column-reverse;
+        /* کارت آمار بالا و عکس زیر آن قرار می‌گیرد */
+        gap: 25px;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .stats-side-img {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .stats-card {
+        padding: 20px 15px;
+        max-width: 100%;
+    }
+
+    .stats-title {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .stats-row {
+        padding: 12px 8px;
+    }
+
+    .stats-label {
+        font-size: 0.95rem;
+    }
+
+    .stats-value {
+        font-size: 1.1rem;
+        padding: 2px 10px;
+    }
+
+    /* واکنش‌گرایی نظرات */
+    .reviews-container {
+        padding: 0 15px;
+    }
+
+    .review-card {
+        flex: 0 0 260px;
+        padding: 15px;
+    }
+
+    .review-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .review-name {
+        font-size: 1rem;
+    }
+
+    .review-text {
+        font-size: 1rem;
+    }
+
+    /* واکنش‌گرایی گالری */
+    .gallery-container {
+        padding: 0 15px;
+    }
+
+    .gallery-card {
+        flex: 0 0 240px;
+    }
+
+    .gallery-image {
+        height: 160px;
+    }
+
+    .gallery-image-title {
+        font-size: 0.9rem;
+    }
+
+    /* واکنش‌گرایی بخش راه‌های ارتباطی */
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    /* تبدیل صحیح خط جداکننده به خط افقی در موبایل */
+    .contact-container::after {
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #ffffff 50%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .contact-column {
+        flex: 0 0 100%;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .contact-item {
+        justify-content: flex-start;
+    }
+}
+
+/* تنظیمات تبلت و دسکتاپ */
+@media (min-width: 768px) {
+    .site-section {
+        min-height: 600px;
+    }
+
+    h1,
+    h2 {
+        font-size: 2.5rem;
+    }
+}
